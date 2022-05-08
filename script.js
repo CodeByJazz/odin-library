@@ -5,10 +5,10 @@ let myLibrary = [];
 
 //Object Constructor
 function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+  this.Title = title;
+  this.Author = author;
+  this.Pages = pages;
+  this.Read = read;
   // this.info = function () {
   //   return `${this.title} by ${this.author} is ${this.pages} and is ${this.read}.`;
   // };
@@ -47,3 +47,32 @@ function displayBooksOnPage() {
     }
   });
 }
+
+//Calling function and adding data manually
+addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
+
+addBookToLibrary(
+  "Night Sky With Exit Wounds",
+  "Ocean Vuong",
+  "89 Pages",
+  "Unread"
+);
+addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
+
+addBookToLibrary(
+  "Night Sky With Exit Wounds",
+  "Ocean Vuong",
+  "89 Pages",
+  "Unread"
+);
+addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
+
+addBookToLibrary(
+  "Night Sky With Exit Wounds",
+  "Ocean Vuong",
+  "89 Pages",
+  "Unread"
+);
+
+console.log("End of Array", myLibrary);
+displayBooksOnPage();

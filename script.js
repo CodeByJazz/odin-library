@@ -4,7 +4,7 @@
 let myLibrary = [];
 
 //Object Constructor
-function Book(title, author, pages, read) {
+function Book(Title, author, pages, read) {
   this.Title = title;
   this.Author = author;
   this.Pages = pages;
@@ -49,30 +49,30 @@ function displayBooksOnPage() {
 }
 
 //Calling function and adding data manually
-addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
+// addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
 
-addBookToLibrary(
-  "Night Sky With Exit Wounds",
-  "Ocean Vuong",
-  "89 Pages",
-  "Unread"
-);
-addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
+// addBookToLibrary(
+//   "Night Sky With Exit Wounds",
+//   "Ocean Vuong",
+//   "89 Pages",
+//   "Unread"
+// );
+// addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
 
-addBookToLibrary(
-  "Night Sky With Exit Wounds",
-  "Ocean Vuong",
-  "89 Pages",
-  "Unread"
-);
-addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
+// addBookToLibrary(
+//   "Night Sky With Exit Wounds",
+//   "Ocean Vuong",
+//   "89 Pages",
+//   "Unread"
+// );
+// addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
 
-addBookToLibrary(
-  "Night Sky With Exit Wounds",
-  "Ocean Vuong",
-  "89 Pages",
-  "Unread"
-);
+// addBookToLibrary(
+//   "Night Sky With Exit Wounds",
+//   "Ocean Vuong",
+//   "89 Pages",
+//   "Unread"
+// );
 
-console.log("End of Array", myLibrary);
-displayBooksOnPage();
+// console.log("End of Array", myLibrary);
+// displayBooksOnPage();

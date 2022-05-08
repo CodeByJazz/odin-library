@@ -1,5 +1,3 @@
-// let userBooks = prompt("Enter your favorite books.");
-
 // Declare empty array for library
 let myLibrary = [];
 
@@ -9,26 +7,14 @@ function Book(title, author, pages, read) {
   this.Author = author;
   this.Pages = pages;
   this.Read = read;
-  // this.info = function () {
-  //   return `${this.title} by ${this.author} is ${this.pages} and is ${this.read}.`;
-  // };
 }
 
 // Function for adding a new book to the array
-
 function addBookToLibrary(title, author, pages, read) {
   let book = new Book(title, author, pages, read);
   myLibrary.push(book);
   displayBooksOnPage();
 }
-
-// const bookOne = new Book(
-//   "Lord of the Flies",
-//   "William Golding",
-//   "224 pages",
-//   "read"
-// );
-// console.log(bookOne.info());
 
 //Function to display library array to cards
 function displayBooksOnPage() {
@@ -59,7 +45,6 @@ function displayBooksOnPage() {
 
     //Link the data attribute of the remove button to the array and card
     removeBookButton.dataset.linkedArray = index;
-    index++;
     console.log(
       "show me the dataset link back to the array...",
       removeBookButton.dataset.linkedArray
@@ -67,7 +52,6 @@ function displayBooksOnPage() {
     card.appendChild(removeBookButton);
 
     //Add event listener/remove array item from array and card from parent div via data link
-
     removeBookButton.addEventListener("click", removeBookFromLibrary);
 
     function removeBookFromLibrary() {
@@ -80,6 +64,41 @@ function displayBooksOnPage() {
       card.remove();
       displayBooksOnPage();
     }
+    //Create read status button and add class attribute for each card array
+    const readStatusButton = document.createElement("button");
+    readStatusButton.classList.add("read-status-button");
+    readStatusButton.textContent = "Toggle Read Status";
+
+    //Link the data attribute of the toggle read button to the array and card
+    readStatusButton.dataset.linkedArray = index;
+    console.log(
+      "show me the dataset link back to the array FOR READ STATUS BUTTON...",
+      readStatusButton.dataset.linkedArray
+    );
+    card.appendChild(readStatusButton);
+
+    //Add event listener/toggle logic for array objects prototype for read status change
+    readStatusButton.addEventListener("click", toggleReadStatus);
+
+    function toggleReadStatus() {
+      let retrieveBookToToggle = readStatusButton.dataset.linkedArray;
+      Book.prototype = Object.create(Book.prototype);
+      const toggleBook = new Book();
+      console.log(
+        "What is the toggle initial value?...",
+        myLibrary[parseInt(retrieveBookToToggle)].Read
+      );
+
+      //Run check to see what read value is present to toggle from
+      if (myLibrary[parseInt(retrieveBookToToggle)].Read == "Yes") {
+        toggleBook.Read = "No";
+        myLibrary[parseInt(retrieveBookToToggle)].Read = toggleBook.Read;
+      } else if (myLibrary[parseInt(retrieveBookToToggle)].Read == "No") {
+        toggleBook.Read = "Yes";
+        myLibrary[parseInt(retrieveBookToToggle)].Read = toggleBook.Read;
+      }
+      displayBooksOnPage();
+    }
 
     //Loop over the object keys and values and display each card
     for (let key in myLibrarys) {
@@ -88,6 +107,7 @@ function displayBooksOnPage() {
       para.textContent = `${key}: ${myLibrarys[key]}`;
       card.appendChild(para);
     }
+    index++;
   });
 }
 
@@ -127,32 +147,3 @@ clearButton.addEventListener("click", clearForm);
 function clearForm() {
   document.getElementById("add-book").reset();
 }
-
-//Calling function and adding data manually
-// addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
-
-// addBookToLibrary(
-//   "Night Sky With Exit Wounds",
-//   "Ocean Vuong",
-//   "89 Pages",
-//   "Unread"
-// );
-// addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
-
-// addBookToLibrary(
-//   "Night Sky With Exit Wounds",
-//   "Ocean Vuong",
-//   "89 Pages",
-//   "Unread"
-// );
-// addBookToLibrary("Lord of the Flies", "William Golding", "224 Pages", "Read");
-
-// addBookToLibrary(
-//   "Night Sky With Exit Wounds",
-//   "Ocean Vuong",
-//   "89 Pages",
-//   "Unread"
-// );
-
-// console.log("End of Array", myLibrary);
-// displayBooksOnPage();

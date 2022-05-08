@@ -1,0 +1,1 @@
+The Library book application allows users to input information about their favorite books to create a book collection. They can easily manage their personal library by adding, removing, and updating the status of any books they are currently reading or plan to read. This software was created using HTML5, Javascript, and CSS.

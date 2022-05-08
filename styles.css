@@ -35,9 +35,12 @@ h1 {
   border: 5px solid #06113c;
   background-color: #ff8c32;
   color: #06113c;
-  padding: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+  font-size: large;
 }
 .form {
+  font-size: large;
   border: 5px solid #06113cee;
   background-color: #eeeeee;
   color: #06113c;
@@ -55,9 +58,13 @@ h1 {
 }
 
 button.remove-book-button:hover {
-  background-color: #eeeeee;
+  background-color: #eeee;
+}
+button.read-status-button:hover {
+  background-color: #eeee;
 }
 button {
+  font-size: small;
   text-align: center;
   margin: 10px;
   padding: 5px;

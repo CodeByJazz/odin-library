@@ -28,3 +28,22 @@ function addBookToLibrary(title, author, pages, read) {
 //   "read"
 // );
 // console.log(bookOne.info());
+
+//Function to display library array to cards
+function displayBooksOnPage() {
+  const books = document.querySelector(".books");
+
+  //Loop over the library array and display to the cards
+  myLibrary.forEach((myLibrary) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    books.appendChild(card);
+
+    for (let key in myLibrary) {
+      console.log(`${key}: ${myLibrary[key]}`);
+      const para = document.createElement("p");
+      para.textContent = `${key}: ${myLibrary[key]}`;
+      card.appendChild(para);
+    }
+  });
+}

@@ -24,6 +24,7 @@ h1 {
   padding-right: 18px;
   padding-top: 18px;
   background-color: #eeeeee;
+  border: 5px solid #06113cee;
 }
 .books .card {
   display: grid;
@@ -37,6 +38,28 @@ h1 {
   padding: 10px;
 }
 .form {
+  border: 5px solid #06113cee;
   background-color: #eeeeee;
   color: #06113c;
+}
+#add-book {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 50px;
+}
+.add-book-button {
+  margin-top: 30px;
+}
+button {
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px black;
+}
+button:hover {
+  background-color: #ff8c32;
 }

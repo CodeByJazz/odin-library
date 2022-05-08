@@ -35,7 +35,7 @@ function displayBooksOnPage() {
   const books = document.querySelector(".books");
 
   //Remove all previously displayed cards before looping the array
-  const removeDivs = document.querySelectory(".card");
+  const removeDivs = document.querySelectorAll(".card");
   console.log("show me the mode count of current card divs...", removeDivs);
   for (let i = 0; i < removeDivs.length; i++) {
     removeDivs[i].remove();

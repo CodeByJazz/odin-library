@@ -61,7 +61,7 @@ const addBookButton = document.querySelector(".add-book-button");
 addBookButton.addEventListener("click", displayTheForm);
 
 function displayTheForm() {
-  document.getElementById("add-book-form").style.display = " ";
+  document.getElementById("add-book-form").style.display = "";
 }
 
 //Add event listener/add input to array for new entry form
@@ -76,13 +76,20 @@ function intakeFormData() {
   let read = document.getElementById("Read").value;
 
   //break out if form is incomplete
-  if (title == " " || author == " " || pages == " " || read == " ") {
+  if (title == "" || author == "" || pages == "" || read == "") {
     return;
   }
   //Call function to input the book data to array
   addBookToLibrary(title, author, pages, read);
 
   //Reset the form after successful submission
+  document.getElementById("add-book").reset();
+}
+
+const clearButton = document.querySelector(".reset-button");
+clearButton.addEventListener("click", clearForm);
+
+function clearForm() {
   document.getElementById("add-book").reset();
 }
 

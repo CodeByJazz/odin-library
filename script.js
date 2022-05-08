@@ -19,6 +19,7 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
   let book = new Book(title, author, pages, read);
   myLibrary.push(book);
+  displayBooksOnPage();
 }
 
 // const bookOne = new Book(
@@ -32,6 +33,13 @@ function addBookToLibrary(title, author, pages, read) {
 //Function to display library array to cards
 function displayBooksOnPage() {
   const books = document.querySelector(".books");
+
+  //Remove all previously displayed cards before looping the array
+  const removeDivs = document.querySelectory(".card");
+  console.log("show me the mode count of current card divs...", removeDivs);
+  for (let i = 0; i < removeDivs.length; i++) {
+    removeDivs[i].remove();
+  }
 
   //Loop over the library array and display to the cards
   myLibrary.forEach((myLibrary) => {

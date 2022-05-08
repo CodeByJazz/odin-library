@@ -4,7 +4,7 @@
 let myLibrary = [];
 
 //Object Constructor
-function Book(Title, author, pages, read) {
+function Book(title, author, pages, read) {
   this.Title = title;
   this.Author = author;
   this.Pages = pages;
@@ -46,6 +46,36 @@ function displayBooksOnPage() {
       card.appendChild(para);
     }
   });
+}
+
+//Add event listener/display form to add a new book to library
+const addBookButton = document.querySelector(".add-book-button");
+addBookButton.addEventListener("click", displayTheForm);
+
+function displayTheForm() {
+  document.getElementById("add-book-form").style.display = " ";
+}
+
+//Add event listener/add input to array for new entry form
+const submitButton = document.querySelector(".submit-button");
+submitButton.addEventListener("click", intakeFormData);
+
+//Transform data to variables for intake
+function intakeFormData() {
+  let title = document.getElementById("Title").value;
+  let author = document.getElementById("Author").value;
+  let pages = document.getElementById("Pages").value;
+  let read = document.getElementById("Read").value;
+
+  //break out if form is incomplete
+  if (title == " " || author == " " || pages == " " || read == " ") {
+    return;
+  }
+  //Call function to input the book data to array
+  addBookToLibrary(title, author, pages, read);
+
+  //Reset the form after successful submission
+  document.getElementById("add-book").reset();
 }
 
 //Calling function and adding data manually
